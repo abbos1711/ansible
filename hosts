@@ -1,9 +1,9 @@
 [all]
-target1 ansible_host=95.130.227.6  ansible_ssh_pass=pG8hW7gQ4soG
+target1 ansible_host=95.130.222.66  ansible_ssh_pass=ppppswafeadfeafeaad
 
 
 [web-app]
-target1 ansible_host=95.130.227.6  ansible_ssh_pass=pG8hW7gQ4soG
+target1 ansible_host=95.130.222.66  ansible_ssh_pass=ppppswafeadfeafeaad
 
 # This is the default ansible 'hosts' file.
 #
