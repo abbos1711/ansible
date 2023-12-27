@@ -1,0 +1,12 @@
+---
+- name: Check Docker images
+  hosts: localhost
+  gather_facts: true
+
+  tasks:
+    - name: Retrieve Docker image facts
+      community.docker.docker_image_facts:
+
+    - name: Display Docker images
+      debug:
+        var: ansible_facts.docker_image_facts

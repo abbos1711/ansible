@@ -1,0 +1,30 @@
+- name: Test blocks
+  hosts: localhost #or you can change host
+  become:
+
+  vars:
+ 
+  tasks:
+  
+  - block:
+  
+    - name: Install packages
+      apt:
+        pkg:
+	  - tree
+	  - nmon
+	  - htop
+	state: present
+
+    - name: Create folder
+      file:
+	path: /etc/nginx/
+	state: directory
+    when: ansible_hostname == "aclient01"
+
+    - name: Copy file
+      copy:
+        src: file222
+	dest: /etc/nginx/sites-available/
+      when: ansible_hostname == "aclient03"
+    

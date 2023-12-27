@@ -1,0 +1,27 @@
+- name : ping hosts
+  hosts: localhost #or all
+  become: yes
+
+  tasks:
+ 
+  - name: Task ping
+    ping:
+
+  - name: update cache
+    apt:
+      update_cache: yes
+
+  - name: upgrade
+    apt:
+      upgrade: yes
+  
+  - name: install apache2
+    apt:
+      pkg: apache2
+      state: present	
+ 
+  - name: copy file 
+    copy:
+      src: ./file111
+      dest: /home/
+      mode: 777

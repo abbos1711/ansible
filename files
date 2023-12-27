@@ -1,0 +1,22 @@
+- name: Create and copy files with permissions
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: Create a file with read-only permissions
+      copy:
+        content: "This is a read-only file."
+        dest: /path/to/your/read-only-file
+        mode: "0444"
+      
+    - name: Create a file with read-write permissions
+      copy:
+        content: "This is a read-write file."
+        dest: /path/to/your/read-write-file
+        mode: "0644"
+      
+    - name: Create a file with executable permissions
+      copy:
+        content: "This is an executable file."
+        dest: /path/to/your/executable-file
+        mode: "0755"

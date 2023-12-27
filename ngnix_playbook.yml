@@ -1,0 +1,13 @@
+---
+- name: Check Nginx status
+  hosts: your_nginx_hosts
+  gather_facts: false
+
+  tasks:
+    - name: Get Nginx status
+      shell: "service nginx status"
+      register: nginx_status
+
+    - name: Display Nginx status
+      debug:
+        var: nginx_status.stdout_lines

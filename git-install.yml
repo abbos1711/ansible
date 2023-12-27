@@ -1,0 +1,8 @@
+---
+- name: Git installation
+  hosts: localhost
+  remote_user: root
+  tasks:
+    - name: Install GIT
+      apt: name=git state=present
+      #apt: name=mysql state=present

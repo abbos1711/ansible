@@ -1,0 +1,25 @@
+- name: ping servers
+  hosts: localhost
+  become: yes
+
+  vars:
+    packages:
+      - apache2
+      - htop
+      - tree
+      - rsync
+      - python
+      - golang
+      - docker
+      - nginx
+      - ufw
+	# you can add other important packages to here for installing
+
+  tasks:
+    - name: task ping
+      ping:
+
+    - name: install packages
+      apt:
+        name: "{{ packages }}"
+        state: present

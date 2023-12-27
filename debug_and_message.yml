@@ -1,0 +1,34 @@
+- name: Messages
+  hosts: localhost
+  become: yes
+
+  vars:
+    word1: home
+    word2: in
+    place: Tashkent
+  
+  tasks:
+
+  - name: Print variables
+    debug:
+      var: word1
+
+    debug:
+      msg: "My home in {{place}}"
+
+  - debug:
+      msg: "My {{word1}} {{word2}} {{place}}"
+
+  - set_fact:
+       message: " My {{word1}} {{word2}} {{place}}"
+
+  - debug:
+      var: message
+
+
+  - debug:
+      var: ansible_distribution_version
+
+  - debug:
+      msg: "Linux: {{ansible_distribution}} , Version: {{ansible_distribution_version}}"
+

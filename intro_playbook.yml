@@ -1,0 +1,7 @@
+- name: intro to ansible playbooks
+  hosts: localhost
+  become: yes
+
+  tasks:
+    - name: checking connection via ping
+      ping:

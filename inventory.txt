@@ -1,0 +1,2 @@
+target1 ansible_host=95.130.227.6  ansible_ssh_pass=pG8hW7gQ4soG
+

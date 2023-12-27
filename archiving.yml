@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  become: true
+  tasks:
+  
+  - name: Ansible zip directory example
+    archive:
+     path:
+      - /home/neo/bash
+      - /home/neo/code-server
+     dest: /home/neo/bash/helloworld.zip
+     format: zip

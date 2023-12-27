@@ -1,0 +1,14 @@
+- name: Test Blocks 
+  hosts: all
+  become: yes
+
+  vars:
+
+
+  tasks:
+
+  - name: Copy files
+    template:
+       src: ./test
+       dest: /home
+       mode: 0777
